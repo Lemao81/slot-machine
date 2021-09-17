@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlotMachine.Api", "SlotMachine.Api\SlotMachine.Api.csproj", "{4DFC1C34-E43E-48D5-8041-6CD0F5D74911}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlotMachine.Domain", "SlotMachine.Domain\SlotMachine.Domain.csproj", "{D4A3C08E-E3EB-4019-BD4E-98B2ABA42836}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlotMachine.Tests", "SlotMachine.Tests\SlotMachine.Tests.csproj", "{7F44161E-5E9D-4FAE-A402-E529B3912AAB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DFC1C34-E43E-48D5-8041-6CD0F5D74911}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DFC1C34-E43E-48D5-8041-6CD0F5D74911}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DFC1C34-E43E-48D5-8041-6CD0F5D74911}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DFC1C34-E43E-48D5-8041-6CD0F5D74911}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4A3C08E-E3EB-4019-BD4E-98B2ABA42836}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4A3C08E-E3EB-4019-BD4E-98B2ABA42836}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4A3C08E-E3EB-4019-BD4E-98B2ABA42836}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4A3C08E-E3EB-4019-BD4E-98B2ABA42836}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F44161E-5E9D-4FAE-A402-E529B3912AAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F44161E-5E9D-4FAE-A402-E529B3912AAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F44161E-5E9D-4FAE-A402-E529B3912AAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F44161E-5E9D-4FAE-A402-E529B3912AAB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
