@@ -1,24 +1,39 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
+using SlotMachine.Api.Interfaces;
+using SlotMachine.Api.Services;
+using SlotMachine.Domain.Interfaces;
+using SlotMachine.Domain.Models;
+using SlotMachine.Domain.Services;
 
 namespace SlotMachine.Api
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddOptions<ReelOptions>(ReelOptions.SectionName);
+
+            services.AddScoped<ISlotMachineManager, SlotMachineManager>();
+            services.AddScoped<ISlotMachineService, SlotMachineService>();
+
+            services.AddSingleton<ISlotMachine>(sp =>
+            {
+                var reelOptions = sp.GetRequiredService<IOptions<ReelOptions>>().Value;
+
+                var reel1 = new Reel(reelOptions.Reel1.Select(r => (Symbol)r).ToList());
+                var reel2 = new Reel(reelOptions.Reel2.Select(r => (Symbol)r).ToList());
+                var reel3 = new Reel(reelOptions.Reel3.Select(r => (Symbol)r).ToList());
+
+                return new SlotMachineImpl(new IReel[] { reel1, reel2, reel3 }, sp.GetServices<IWinLineVisitor>());
+            });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
