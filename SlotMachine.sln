@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlotMachine.Domain", "SlotM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlotMachine.Tests", "SlotMachine.Tests\SlotMachine.Tests.csproj", "{7F44161E-5E9D-4FAE-A402-E529B3912AAB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{42D31FB6-8630-44CA-90B7-8376FF0D0C21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{7F44161E-5E9D-4FAE-A402-E529B3912AAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F44161E-5E9D-4FAE-A402-E529B3912AAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F44161E-5E9D-4FAE-A402-E529B3912AAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42D31FB6-8630-44CA-90B7-8376FF0D0C21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42D31FB6-8630-44CA-90B7-8376FF0D0C21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42D31FB6-8630-44CA-90B7-8376FF0D0C21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42D31FB6-8630-44CA-90B7-8376FF0D0C21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
