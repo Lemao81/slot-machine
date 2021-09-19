@@ -1,7 +1,7 @@
 using System.Linq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
@@ -15,15 +15,23 @@ namespace SlotMachine.Api
 {
     public class Startup
     {
+        private readonly IConfiguration _configuration;
+
+        public Startup(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddOptions<ReelOptions>(ReelOptions.SectionName);
+            services.AddControllers();
+
+            services.Configure<ReelOptions>(_configuration.GetSection(ReelOptions.SectionName));
 
             services.AddScoped<ISlotMachineService, SlotMachineService>();
-            services.AddScoped<ISlotMachineService, SlotMachineService>();
-            services.AddScoped<IWinLineVisitor, HorizontalWinLineVisitor>();
-            services.AddScoped<IWinLineVisitor, DiagonalWinLineVisitor>();
 
+            services.AddSingleton<IWinLineVisitor, HorizontalWinLineVisitor>();
+            services.AddSingleton<IWinLineVisitor, DiagonalWinLineVisitor>();
             services.AddSingleton<ISlotMachine>(sp =>
             {
                 var reelOptions = sp.GetRequiredService<IOptions<ReelOptions>>().Value;
@@ -47,10 +55,9 @@ namespace SlotMachine.Api
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=SlotMachine}/{action=GetWinLines}");
             });
         }
     }

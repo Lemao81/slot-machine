@@ -4,6 +4,8 @@ using SlotMachine.Api.Interfaces;
 
 namespace SlotMachine.Api.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class SlotMachineController : ControllerBase
     {
         private readonly ISlotMachineService _slotMachineService;

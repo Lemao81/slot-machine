@@ -13,11 +13,11 @@ namespace SlotMachine.Domain.Models
             WinAmount = winAmount;
         }
 
-        public static Symbol A = new Symbol("A", SymbolType.A, new Money());
+        public static Symbol A = new Symbol("A", SymbolType.A, new Money(10));
 
-        public static Symbol B = new Symbol("B", SymbolType.B, new Money());
+        public static Symbol B = new Symbol("B", SymbolType.B, new Money(15));
 
-        public static Symbol C = new Symbol("C", SymbolType.C, new Money());
+        public static Symbol C = new Symbol("C", SymbolType.C, new Money(20));
 
         public SymbolType Type { get; }
 
