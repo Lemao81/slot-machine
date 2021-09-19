@@ -18,9 +18,15 @@ namespace SlotMachine.Domain.Models
             _winLineVisitors = winLineVisitors;
         }
 
-        public ISubSetMatrix GetRandomSubSetMatrix()
+        public ICollection<IWinLine> CurrentWinLines { get; private set; } = new List<IWinLine>();
+
+        public Money CurrentWin { get; private set; } = new(0);
+
+        public void Play()
         {
-            return new SubSetMatrix(_reels.Select(r => r.GetRandomSubSet()).ToArray(), _winLineVisitors);
+            var subSetMatrix = new SubSetMatrix(_reels.Select(r => r.GetRandomSubSet()).ToArray());
+            CurrentWinLines = subSetMatrix.GetWinLines(_winLineVisitors);
+            CurrentWin = CurrentWinLines.Aggregate(new Money(0), (money, winLine) => money + winLine.Win);
         }
     }
 }

@@ -19,8 +19,10 @@ namespace SlotMachine.Api
         {
             services.AddOptions<ReelOptions>(ReelOptions.SectionName);
 
-            services.AddScoped<ISlotMachineManager, SlotMachineManager>();
             services.AddScoped<ISlotMachineService, SlotMachineService>();
+            services.AddScoped<ISlotMachineService, SlotMachineService>();
+            services.AddScoped<IWinLineVisitor, HorizontalWinLineVisitor>();
+            services.AddScoped<IWinLineVisitor, DiagonalWinLineVisitor>();
 
             services.AddSingleton<ISlotMachine>(sp =>
             {

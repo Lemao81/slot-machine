@@ -3,11 +3,8 @@ using SlotMachine.Domain.Interfaces;
 
 namespace SlotMachine.Domain.Services
 {
-    public class DiagonalWinLineVisitor : IWinLineVisitor
+    public class DiagonalWinLineVisitor : WinLineVisitorBase
     {
-        public ICollection<IWinLine> Visit(ISubSetMatrix subSetMatrix)
-        {
-            throw new System.NotImplementedException();
-        }
+        public override ICollection<IWinLine> Visit(ISubSetMatrix subSetMatrix) => GetWinLines(subSetMatrix.TopDiagonal, subSetMatrix.BottomDiagonal);
     }
 }

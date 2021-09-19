@@ -2,7 +2,7 @@
 
 namespace SlotMachine.Api.Interfaces
 {
-    public interface ISlotMachineManager
+    public interface ISlotMachineService
     {
         GetWinLinesResponse GetWinLinesResponse();
     }

@@ -6,14 +6,14 @@ namespace SlotMachine.Api.Controllers
 {
     public class SlotMachineController : ControllerBase
     {
-        private readonly ISlotMachineManager _slotMachineManager;
+        private readonly ISlotMachineService _slotMachineService;
 
-        public SlotMachineController(ISlotMachineManager slotMachineManager)
+        public SlotMachineController(ISlotMachineService slotMachineService)
         {
-            _slotMachineManager = slotMachineManager;
+            _slotMachineService = slotMachineService;
         }
 
         [HttpGet]
-        public ActionResult<GetWinLinesResponse> GetWinLines() => _slotMachineManager.GetWinLinesResponse();
+        public ActionResult<GetWinLinesResponse> GetWinLines() => _slotMachineService.GetWinLinesResponse();
     }
 }

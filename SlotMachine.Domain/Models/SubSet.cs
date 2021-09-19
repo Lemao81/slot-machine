@@ -5,17 +5,16 @@ namespace SlotMachine.Domain.Models
 {
     public class SubSet : ISubSet
     {
-        private readonly Symbol[] _symbols;
-
         public SubSet(Symbol[] symbols)
         {
             if (symbols.Length != 3) throw new ArgumentException("Sub-set has to consist of three symbols");
 
-            _symbols = symbols;
+            Symbols = symbols;
         }
 
-        public bool IsWin() => _symbols[0] == _symbols[1] && _symbols[1] == _symbols[2];
+        public Symbol[] Symbols { get; }
+        public Symbol FirstSymbol => Symbols[0];
 
-        public Symbol FirstSymbol => _symbols[0];
+        public bool IsWin() => Symbols[0] == Symbols[1] && Symbols[1] == Symbols[2];
     }
 }
