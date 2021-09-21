@@ -6,11 +6,11 @@ namespace SlotMachine.Domain.Services
 {
     public abstract class WinLineVisitorBase : IWinLineVisitor
     {
-        public abstract ICollection<IWinLine> Visit(ISubSetMatrix subSetMatrix);
+        public abstract ICollection<WinLine> Visit(SubSetMatrix subSetMatrix);
 
-        protected static ICollection<IWinLine> GetWinLines(params (ISubSet Subset, Position[] Positions)[] subSetsToPositions)
+        protected static ICollection<WinLine> GetWinLines(params (SubSet Subset, Position[] Positions)[] subSetsToPositions)
         {
-            var winLines = new List<IWinLine>();
+            var winLines = new List<WinLine>();
             foreach (var (subset, positions) in subSetsToPositions)
             {
                 if (subset.IsWin())

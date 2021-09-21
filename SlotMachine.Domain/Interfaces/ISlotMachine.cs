@@ -6,7 +6,7 @@ namespace SlotMachine.Domain.Interfaces
     public interface ISlotMachine
     {
         void Play();
-        ICollection<IWinLine> CurrentWinLines { get; }
+        ICollection<WinLine> CurrentWinLines { get; }
         Money CurrentWin { get; }
     }
 }

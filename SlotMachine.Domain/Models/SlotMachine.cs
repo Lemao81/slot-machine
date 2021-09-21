@@ -18,7 +18,7 @@ namespace SlotMachine.Domain.Models
             _winLineVisitors = winLineVisitors;
         }
 
-        public ICollection<IWinLine> CurrentWinLines { get; private set; } = new List<IWinLine>();
+        public ICollection<WinLine> CurrentWinLines { get; private set; } = new List<WinLine>();
 
         public Money CurrentWin { get; private set; } = new(0);
 

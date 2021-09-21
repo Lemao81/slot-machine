@@ -24,7 +24,7 @@ namespace SlotMachine.Domain.Models
             runner.Next = _head;
         }
 
-        public ISubSet GetRandomSubSet()
+        public SubSet GetRandomSubSet()
         {
             var skip = new Random(DateTime.Now.Millisecond).Next(3, DateTime.Now.Second + 3);
 

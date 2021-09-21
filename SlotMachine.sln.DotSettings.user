@@ -3,5 +3,9 @@
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::7F44161E-5E9D-4FAE-A402-E529B3912AAB::net5.0::SlotMachine.Tests.SlotMachineImplTests.CurrentWin_WinLinesAdded_WinLineDataCorrect&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::7F44161E-5E9D-4FAE-A402-E529B3912AAB::net5.0::SlotMachine.Tests.SlotMachineImplTests.CurrentWin_WinLinesExist_ReturnsExpectedAmount&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::7F44161E-5E9D-4FAE-A402-E529B3912AAB::net5.0::SlotMachine.Tests.HorizontalWinLineVisitorTests.Visit_NoHorizontalWinline_ZeroWinReturned&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::7F44161E-5E9D-4FAE-A402-E529B3912AAB::net5.0::SlotMachine.Tests.HorizontalWinLineVisitorTests.Visit_HorizontalWinlines_WinlinesReturned&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::7F44161E-5E9D-4FAE-A402-E529B3912AAB::net5.0::SlotMachine.Tests.DiagonalWinLineVisitorTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::7F44161E-5E9D-4FAE-A402-E529B3912AAB::net5.0::SlotMachine.Tests.ReelTests.Name&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

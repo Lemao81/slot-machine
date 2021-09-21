@@ -5,19 +5,19 @@ using SlotMachine.Domain.Interfaces;
 
 namespace SlotMachine.Domain.Models
 {
-    public class SubSetMatrix : ISubSetMatrix
+    public class SubSetMatrix
     {
-        private ICollection<IWinLine> _winLines;
-        private readonly ISubSet[] _columnSubSets;
+        private ICollection<WinLine> _winLines;
+        private readonly SubSet[] _columnSubSets;
 
-        public SubSetMatrix(ISubSet[] columnSubSets)
+        public SubSetMatrix(SubSet[] columnSubSets)
         {
             if (columnSubSets.Length != 3) throw new ArgumentException("Sub-set matrix has to consist of three column subsets");
 
             _columnSubSets = columnSubSets;
         }
 
-        public (ISubSet SubSet, Position[] Positions) FirstColumn
+        public (SubSet SubSet, Position[] Positions) FirstColumn
         {
             get
             {
@@ -27,7 +27,7 @@ namespace SlotMachine.Domain.Models
             }
         }
 
-        public (ISubSet SubSet, Position[] Positions) SecondColumn
+        public (SubSet SubSet, Position[] Positions) SecondColumn
         {
             get
             {
@@ -37,7 +37,7 @@ namespace SlotMachine.Domain.Models
             }
         }
 
-        public (ISubSet SubSet, Position[] Positions) ThirdColumn
+        public (SubSet SubSet, Position[] Positions) ThirdColumn
         {
             get
             {
@@ -47,7 +47,7 @@ namespace SlotMachine.Domain.Models
             }
         }
 
-        public (ISubSet SubSet, Position[] Positions) FirstRow
+        public (SubSet SubSet, Position[] Positions) FirstRow
         {
             get
             {
@@ -57,7 +57,7 @@ namespace SlotMachine.Domain.Models
             }
         }
 
-        public (ISubSet SubSet, Position[] Positions) SecondRow
+        public (SubSet SubSet, Position[] Positions) SecondRow
         {
             get
             {
@@ -67,7 +67,7 @@ namespace SlotMachine.Domain.Models
             }
         }
 
-        public (ISubSet SubSet, Position[] Positions) ThirdRow
+        public (SubSet SubSet, Position[] Positions) ThirdRow
         {
             get
             {
@@ -77,7 +77,7 @@ namespace SlotMachine.Domain.Models
             }
         }
 
-        public (ISubSet SubSet, Position[] Positions) TopDiagonal
+        public (SubSet SubSet, Position[] Positions) TopDiagonal
         {
             get
             {
@@ -87,7 +87,7 @@ namespace SlotMachine.Domain.Models
             }
         }
 
-        public (ISubSet SubSet, Position[] Positions) BottomDiagonal
+        public (SubSet SubSet, Position[] Positions) BottomDiagonal
         {
             get
             {
@@ -97,7 +97,7 @@ namespace SlotMachine.Domain.Models
             }
         }
 
-        public ICollection<IWinLine> GetWinLines(IEnumerable<IWinLineVisitor> winLineVisitors) =>
+        public ICollection<WinLine> GetWinLines(IEnumerable<IWinLineVisitor> winLineVisitors) =>
             _winLines ??= winLineVisitors.SelectMany(v => v.Visit(this)).ToList();
 
         private (Symbol[] symbols, Position[] Positions) GetSymbolsAndPositions(int x1, int y1, int x2, int y2, int x3, int y3)

@@ -1,9 +1,8 @@
 ﻿using System;
-using SlotMachine.Domain.Interfaces;
 
 namespace SlotMachine.Domain.Models
 {
-    public class SubSet : ISubSet
+    public class SubSet
     {
         public SubSet(Symbol[] symbols)
         {

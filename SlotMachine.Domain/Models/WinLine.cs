@@ -1,8 +1,6 @@
-﻿using SlotMachine.Domain.Interfaces;
-
-namespace SlotMachine.Domain.Models
+﻿namespace SlotMachine.Domain.Models
 {
-    public class WinLine : IWinLine
+    public class WinLine
     {
         public WinLine(Symbol symbol, Position[] positions)
         {

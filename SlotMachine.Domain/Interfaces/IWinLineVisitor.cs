@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
+using SlotMachine.Domain.Models;
 
 namespace SlotMachine.Domain.Interfaces
 {
     public interface IWinLineVisitor
     {
-        ICollection<IWinLine> Visit(ISubSetMatrix subSetMatrix);
+        ICollection<WinLine> Visit(SubSetMatrix subSetMatrix);
     }
 }

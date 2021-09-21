@@ -34,17 +34,17 @@ namespace SlotMachine.Tests
             A.CallTo(() => _reel1Fake.GetRandomSubSet()).Returns(new SubSet(new[] { Symbol.A, Symbol.A, Symbol.A }));
             A.CallTo(() => _reel2Fake.GetRandomSubSet()).Returns(new SubSet(new[] { Symbol.A, Symbol.A, Symbol.A }));
             A.CallTo(() => _reel3Fake.GetRandomSubSet()).Returns(new SubSet(new[] { Symbol.A, Symbol.A, Symbol.A }));
-            A.CallTo(() => _winLineVisitorFake1.Visit(A<ISubSetMatrix>.Ignored))
-                .Returns(new List<IWinLine>
+            A.CallTo(() => _winLineVisitorFake1.Visit(A<SubSetMatrix>.Ignored))
+                .Returns(new List<WinLine>
                 {
-                    new WinLine(Symbol.A, new[] { new Position(0, 0), new Position(0, 0), new Position(0, 0) }),
-                    new WinLine(Symbol.B, new[] { new Position(0, 0), new Position(0, 0), new Position(0, 0) }),
+                    new(Symbol.A, new[] { new Position(0, 0), new Position(0, 0), new Position(0, 0) }),
+                    new(Symbol.B, new[] { new Position(0, 0), new Position(0, 0), new Position(0, 0) }),
                 });
-            A.CallTo(() => _winLineVisitorFake2.Visit(A<ISubSetMatrix>.Ignored))
-                .Returns(new List<IWinLine>
+            A.CallTo(() => _winLineVisitorFake2.Visit(A<SubSetMatrix>.Ignored))
+                .Returns(new List<WinLine>
                 {
-                    new WinLine(Symbol.A, new[] { new Position(0, 0), new Position(0, 0), new Position(0, 0) }),
-                    new WinLine(Symbol.C, new[] { new Position(1, 1), new Position(2, 2), new Position(0, 0) }),
+                    new(Symbol.A, new[] { new Position(0, 0), new Position(0, 0), new Position(0, 0) }),
+                    new(Symbol.C, new[] { new Position(1, 1), new Position(2, 2), new Position(0, 0) }),
                 });
             _classUnderTest.Play();
 
@@ -67,12 +67,12 @@ namespace SlotMachine.Tests
             A.CallTo(() => _reel1Fake.GetRandomSubSet()).Returns(new SubSet(new[] { Symbol.A, Symbol.A, Symbol.A }));
             A.CallTo(() => _reel2Fake.GetRandomSubSet()).Returns(new SubSet(new[] { Symbol.A, Symbol.A, Symbol.A }));
             A.CallTo(() => _reel3Fake.GetRandomSubSet()).Returns(new SubSet(new[] { Symbol.A, Symbol.A, Symbol.A }));
-            A.CallTo(() => _winLineVisitorFake1.Visit(A<ISubSetMatrix>.Ignored))
-                .Returns(new List<IWinLine>
+            A.CallTo(() => _winLineVisitorFake1.Visit(A<SubSetMatrix>.Ignored))
+                .Returns(new List<WinLine>
                 {
-                    new WinLine(Symbol.A, new[] { new Position(0, 0), new Position(0, 0), new Position(0, 0) }),
-                    new WinLine(Symbol.B, new[] { new Position(0, 0), new Position(0, 0), new Position(0, 0) }),
-                    new WinLine(Symbol.C, new[] { new Position(0, 0), new Position(0, 0), new Position(0, 0) })
+                    new(Symbol.A, new[] { new Position(0, 0), new Position(0, 0), new Position(0, 0) }),
+                    new(Symbol.B, new[] { new Position(0, 0), new Position(0, 0), new Position(0, 0) }),
+                    new(Symbol.C, new[] { new Position(0, 0), new Position(0, 0), new Position(0, 0) })
                 });
             _classUnderTest.Play();
 

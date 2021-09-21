@@ -1,7 +1,9 @@
-﻿namespace SlotMachine.Domain.Interfaces
+﻿using SlotMachine.Domain.Models;
+
+namespace SlotMachine.Domain.Interfaces
 {
     public interface IReel
     {
-        ISubSet GetRandomSubSet();
+        SubSet GetRandomSubSet();
     }
 }
